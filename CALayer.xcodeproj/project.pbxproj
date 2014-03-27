@@ -22,6 +22,10 @@
 		3633903118E4A272005ECA4D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3633901018E4A272005ECA4D /* UIKit.framework */; };
 		3633903918E4A272005ECA4D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3633903718E4A272005ECA4D /* InfoPlist.strings */; };
 		3633903B18E4A272005ECA4D /* CALayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3633903A18E4A272005ECA4D /* CALayerTests.m */; };
+		3633904518E4A477005ECA4D /* sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 3633904418E4A477005ECA4D /* sunset.png */; };
+		3633904818E4A57F005ECA4D /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 3633904718E4A57F005ECA4D /* Common.m */; };
+		3633904C18E4BF26005ECA4D /* instantly114.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3633904B18E4BF26005ECA4D /* instantly114.jpg */; };
+		3633904E18E4D8FB005ECA4D /* Beautiful.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3633904D18E4D8FB005ECA4D /* Beautiful.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,11 @@
 		3633903618E4A272005ECA4D /* CALayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CALayerTests-Info.plist"; sourceTree = "<group>"; };
 		3633903818E4A272005ECA4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3633903A18E4A272005ECA4D /* CALayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CALayerTests.m; sourceTree = "<group>"; };
+		3633904418E4A477005ECA4D /* sunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunset.png; sourceTree = "<group>"; };
+		3633904618E4A57F005ECA4D /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		3633904718E4A57F005ECA4D /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		3633904B18E4BF26005ECA4D /* instantly114.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = instantly114.jpg; sourceTree = "<group>"; };
+		3633904D18E4D8FB005ECA4D /* Beautiful.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Beautiful.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +129,12 @@
 				3633902118E4A272005ECA4D /* Main_iPad.storyboard */,
 				3633902418E4A272005ECA4D /* ViewController.h */,
 				3633902518E4A272005ECA4D /* ViewController.m */,
+				3633904B18E4BF26005ECA4D /* instantly114.jpg */,
+				3633904418E4A477005ECA4D /* sunset.png */,
+				3633904D18E4D8FB005ECA4D /* Beautiful.jpg */,
 				3633902718E4A272005ECA4D /* Images.xcassets */,
+				3633904618E4A57F005ECA4D /* Common.h */,
+				3633904718E4A57F005ECA4D /* Common.m */,
 				3633901318E4A272005ECA4D /* Supporting Files */,
 			);
 			path = CALayer;
@@ -232,8 +246,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3633902318E4A272005ECA4D /* Main_iPad.storyboard in Resources */,
+				3633904C18E4BF26005ECA4D /* instantly114.jpg in Resources */,
 				3633902818E4A272005ECA4D /* Images.xcassets in Resources */,
+				3633904518E4A477005ECA4D /* sunset.png in Resources */,
 				3633902018E4A272005ECA4D /* Main_iPhone.storyboard in Resources */,
+				3633904E18E4D8FB005ECA4D /* Beautiful.jpg in Resources */,
 				3633901718E4A272005ECA4D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3633904818E4A57F005ECA4D /* Common.m in Sources */,
 				3633902618E4A272005ECA4D /* ViewController.m in Sources */,
 				3633901D18E4A272005ECA4D /* AppDelegate.m in Sources */,
 				3633901918E4A272005ECA4D /* main.m in Sources */,
@@ -393,6 +411,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CALayer/CALayer-Prefix.pch";
 				INFOPLIST_FILE = "CALayer/CALayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +425,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CALayer/CALayer-Prefix.pch";
 				INFOPLIST_FILE = "CALayer/CALayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
