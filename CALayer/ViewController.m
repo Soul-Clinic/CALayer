@@ -16,13 +16,13 @@
 }
 @end
 
-#define PSIZE 160    // size of the pattern cell
+#define cellWidth 160    // size of the pattern cell
 static void drawStar (void *info, CGContextRef myContext)
 {
     int k;
     double r, theta;
 	static double l = 5;
-	r = 0.8 * PSIZE / 2;
+	r = 0.8 * cellWidth / 2;
 	double a = (M_PI * (l - 2)) / l,
 	b = (M_PI - 2 * (M_PI - a)) / 2,
 	c = M_PI - b - M_PI / l;
@@ -30,8 +30,8 @@ static void drawStar (void *info, CGContextRef myContext)
 	NSLog(@"%g %g %g", a / M_PI * 180 , b / M_PI * 180,c / M_PI * 180);
 
     theta = 2 * M_PI / 10;
-	CGContextAddRect(myContext, CGRectMake(0, 0, PSIZE, PSIZE));
-    CGContextTranslateCTM (myContext, PSIZE/2, PSIZE/2);
+	CGContextAddRect(myContext, CGRectMake(0, 0, cellWidth, cellWidth));
+    CGContextTranslateCTM (myContext, cellWidth/2, cellWidth/2);
 
     CGContextMoveToPoint(myContext, 0, r);
     for (k = 1; k <= 10; k++) {
@@ -47,8 +47,8 @@ static void drawStar (void *info, CGContextRef myContext)
 
 
     CGContextClosePath(myContext);
-//	CGContextEOFillPath(myContext);
-    CGContextFillPath(myContext);
+	CGContextEOFillPath(myContext);
+//    CGContextFillPath(myContext);
 }
 
 
@@ -61,7 +61,7 @@ void stencilPatternPainting (CGContextRef myContext,
     CGPatternRef pattern;
     CGColorSpaceRef baseSpace;
     CGColorSpaceRef patternSpace;
-    static const CGFloat color[4] = { 0, 0.5, 0.1, 1 };// 1
+    static const CGFloat color[4] = { 0.3, 0.3, 0.3, .7 };// 1
     static const CGPatternCallbacks callbacks = {0, &drawStar, NULL};// 2
 
     baseSpace = CGColorSpaceCreateDeviceRGB ();// 3
@@ -69,13 +69,13 @@ void stencilPatternPainting (CGContextRef myContext,
     CGContextSetFillColorSpace (myContext, patternSpace);// 5
     CGColorSpaceRelease (patternSpace);
     CGColorSpaceRelease (baseSpace);
-    pattern = CGPatternCreate(NULL, CGRectMake(0, 0, PSIZE, PSIZE),// 6
-							  CGAffineTransformIdentity, PSIZE, PSIZE,
+    pattern = CGPatternCreate(NULL, CGRectMake(0, 0, cellWidth, cellWidth),// 6
+							  CGAffineTransformIdentity, cellWidth, cellWidth,
 							  kCGPatternTilingConstantSpacing,
 							  false, &callbacks);  //注意和上面不一样是false参数
     CGContextSetFillPattern (myContext, pattern, color);//
     CGPatternRelease (pattern);// 8
-    CGContextFillRect (myContext,CGRectMake (0,0,PSIZE*20,PSIZE*20));// 9
+    CGContextFillRect (myContext,CGRectMake (0,0, cellWidth*20, cellWidth*20));// 9
 }
 @implementation ViewController
 
@@ -149,7 +149,7 @@ void MyDrawColoredPattern (void *info, CGContextRef context) {
 
 	Rect window = {0, 0, layer.bounds.size.width, layer.bounds.size.height};
 	stencilPatternPainting(context, &window);
-	return;
+//	return;
     CGColorRef bgColor = rgb(56, 56, 56).CGColor;
     CGContextSetFillColorWithColor(context, bgColor);
 //    CGContextFillRect(context, layer.bounds);
